@@ -30,6 +30,7 @@ export function Row({ title, fetchUrl, isLarge }) {
     });
   }, []);
 
+  console.log(movies)
   // ---------------YOUTUBE FRAME-------------------
   const opts = {
     height: "400",
@@ -41,9 +42,16 @@ export function Row({ title, fetchUrl, isLarge }) {
 
    const handleClick = (movie) => {
     if (trailerUrl) {
-      setTrailerUrl("");
+      setTrailerUrl( "" );
     } else {
-      movieTrailer(movie?.title || movie?.name || movie?.original_name || "")
+      movieTrailer(
+        movie?.title ||
+          movie?.name ||
+          movie?.original_name ||
+          movie?.original_title ||
+          movie?.overview ||
+          ""
+      )
         .then((url) => {
           // https://www.youtube.com/watch?v=XtMThy8QKqU
           const urlParams = new URLSearchParams(new URL(url).search);

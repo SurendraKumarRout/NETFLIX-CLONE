@@ -20,8 +20,8 @@ export const HEADER = styled.header`
       width: 45rem;
       line-height: 1.3;
       padding-top: 1rem;
-      font-size: 0.8rem;
-      max-width: 360px;
+      font-size: 1rem;
+      max-width: 540px;
       height: 80px;
     }
 

@@ -4,7 +4,6 @@ import { useState } from "react";
 import { instance } from "../axios";
 import { requests } from "../requests";
 import { HEADER } from "./banner.js";
-import { Row } from "./Row.jsx";
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
 
@@ -45,7 +44,14 @@ function Banner() {
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
-      movieTrailer(movie?.title || movie?.name || movie?.original_name || "")
+      movieTrailer(
+        movie?.title ||
+          movie?.name ||
+          movie?.original_name ||
+          movie?.original_title ||
+          movie?.overview ||
+          ""
+      )
         .then((url) => {
           // https://www.youtube.com/watch?v=XtMThy8QKqU
           const urlParams = new URLSearchParams(new URL(url).search);
@@ -80,7 +86,7 @@ function Banner() {
             <button className="banner_button">My List</button>
           </div>
           <h1 className="banner_description">
-            {truncate(movie?.overview, 150)}
+            {truncate(movie?.overview, 250)}
           </h1>
         </div>
         <div className="banner_gradient"></div>
