@@ -9,7 +9,7 @@ export const DIV = styled.div`
     padding: 20px;
 
       .poster {
-        max-height: 100px;
+        max-height: 120px;
         object-fit: contain;
         margin-right: 10px;
         width: 100%;
@@ -20,7 +20,7 @@ export const DIV = styled.div`
         transform: scale(1.09);
       }
       .poster_large {
-        max-height: 250px;
+        max-height: 300px;
       }
       & .poster_large:hover {
         transform: scale(1.11);
