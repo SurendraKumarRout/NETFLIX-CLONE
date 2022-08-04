@@ -33,7 +33,7 @@ function Banner() {
 
   // ---------------YOUTUBE FRAME-------------------
   const opts = {
-    height: "400",
+    height: "401",
     width: "100%",
     playerVars: {
       autoplay: 1,
